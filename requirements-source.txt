@@ -1,0 +1,15 @@
+# Reference versions used for the source desktop on Python 3.11 / 3.12.
+# Use your existing company environment. Startup never installs/downloads packages.
+# meent 0.13.2 is required because the adapter uses its numerical internals.
+meent==0.13.2
+numpy==2.2.6
+scipy==1.15.3
+matplotlib==3.10.3
+PyYAML==6.0.2
+threadpoolctl==3.6.0
+psutil==7.0.0
+gdstk==1.0.2
+plotly==7.1.0
+h5py==3.16.0
+pillow==12.3.0
+# tkinter / Tcl / Tk must be supplied by the existing Python distribution.

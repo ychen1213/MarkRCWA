@@ -1,0 +1,19 @@
+units: um
+geometry:
+  pitch_um: 8
+  depth_um: 0.12
+  duty: 0.5
+  ridge: Si3N4
+  groove: air
+  bottom: glass_demo
+simulation:
+  wavelength_um: 0.633
+  theta_deg: 0
+  polarization: TE
+  fourier_order: 55
+  na: 0.8
+output: outputs/demo_symmetric
+diffraction_orders: [-13, -12, -10, -7, -5, -3, -1, 0, 1, 3, 5, 7, 10, 12, 13]
+parameter_scans:
+  wavelength_um: [0.57, 0.60, 0.633, 0.66, 0.69, 0.72]
+  theta_deg: [-10, -5, 0, 5, 10]

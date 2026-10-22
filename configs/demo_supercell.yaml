@@ -1,0 +1,34 @@
+units: um
+geometry:
+  kind: supercell
+  cells:
+    - &base
+      kind: rectangle
+      pitch_um: 8
+      depth_um: 0.12
+      duty: 0.5
+      ridge: Si3N4
+      bottom: glass_demo
+    - <<: *base
+      duty: 0.44
+      depth_um: 0.15
+    - <<: *base
+      duty: 0.54
+      depth_um: 0.09
+reference_mark:
+  kind: supercell
+  cells: [*base, *base, *base]
+periodic_reference: *base
+simulation:
+  wavelength_um: 0.633
+  polarization: TE
+  fourier_order: 63
+  na: 0.8
+detector:
+  mode: pair
+  orders: [3, 9, 15]
+stage_scan:
+  start_um: -4
+  stop_um: 4
+  samples: 2001
+output: outputs/demo_supercell

@@ -1,0 +1,60 @@
+MarkRCWA 纯源码运行
+
+本目录只提供源码、脚本和示例，使用公司已有的 Python 环境。
+不包含 Python 运行时、第三方库二进制或 MarkRCWA.exe。
+不用安装本项目，不联网、不修改系统 PATH、不需要管理员权限。
+
+一、启动
+
+1. 将整个目录复制到公司电脑的可写位置，保留 src 文件夹。
+2. 双击“检查环境.bat”，查看正在使用的 Python、源码路径和依赖检查结果。
+3. 检查通过后，双击“启动RCWA.bat”。
+
+如果公司有多个 Python 环境，或双击时找不到正确环境：
+用记事本打开“启动RCWA.bat”，按开头注释指定 MARKRCWA_PYTHON，
+填写已有环境 python.exe 的完整路径；不填写引号到变量值中。
+检查环境脚本会使用同一个启动入口。
+
+也可以用已有 Python 直接运行：
+    python run_rcwa.py --check-env
+    python run_rcwa.py
+或明确指定解释器：
+    "C:\你的环境\python.exe" run_rcwa.py
+
+已验证的 Python 范围为 3.11 / 3.12。数值适配器需要 meent 0.13.2。
+requirements-source.txt 列出参考依赖版本；启动器只检查，不自动安装。
+其他版本的依赖若有提示，请先查看检查结果，不能直接沿用参考环境的精度结论。
+
+二、修改代码
+
+直接编辑 src\mark_rcwa 下的 .py 文件，保存后关闭软件并重新启动即可。
+启动器优先使用本目录的 src，不读取旁边的旧 EXE，也不使用别处安装的旧 mark_rcwa。
+不需要 PyInstaller，不需要生成 EXE，也不需要重新安装本项目。
+
+常用修改位置：
+    src\mark_rcwa\desktop.py              窗口、按钮、界面流程
+    src\mark_rcwa\desktop_project.py      工程保存、任务与扫描
+    src\mark_rcwa\modeling\materials.py   TXT 材料读取
+    src\mark_rcwa\solvers\meent_adapter.py 非锥形 RCWA 数值适配
+    src\mark_rcwa\solvers\conical.py      锥形 RCWA 计算接口
+    src\mark_rcwa\reflection_matrix.py    R 矩阵和 Excel 导出
+
+这是独立可编辑的源码副本。修改后保留你的这一份目录，勿用重新导出的旧源码覆盖。
+计算内核经过修改后，原基准验证结论不自动适用于修改后的结果。
+
+三、自建 TXT 材料
+
+在“材料”页点击“导入 TXT / CSV”，指定波长单位与 λ、n、k 列号。
+示例文件在 materials\示例材料.txt，数值是合成示例，不代表真实材料。
+已兼容 UTF-8、UTF-8 BOM、带 BOM 的 UTF-16/UTF-32、GBK/GB18030。
+导入成功后状态栏显示读取编码；原始材料文件保持不变。
+未带 BOM 的 UTF-16、无法完整解码的文件会明确提示另存 UTF-8。
+没有 k 列时，列号填 1,2；用于求解前必须明确选择无损近似或补充真实 k 数据。
+当前 TXT/CSV 导入入口用于工艺工程；PH 参数截面工程仍使用其原有材料设置方式。
+
+四、工程和输出
+
+工程、材料和结果可以放在任何当前账户可写的目录。
+保存工程后，计算结果写在工程旁；未保存任务和日志保存在当前用户目录。
+程序不再自动启动 dist\MarkRCWA\MarkRCWA.exe；旧 EXE 不包含本次源码修改。
+桌面版的已知计算范围、相位约定和收敛要求见 docs\DESKTOP.md。

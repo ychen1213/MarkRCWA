@@ -1,0 +1,19 @@
+units: um
+geometry:
+  kind: trapezoid
+  pitch_um: 8
+  depth_um: 0.20
+  duty: 0.48
+  left_angle_deg: 75
+  right_angle_deg: 75
+  slices: 24
+  top_radius_um: 0.025
+  bottom_radius_um: 0.02
+  arc_segments: 24
+  bottom: glass_demo
+simulation:
+  wavelength_um: 0.633
+  polarization: TE
+  fourier_order: 31
+  na: 0.8
+output: outputs/demo_rounded

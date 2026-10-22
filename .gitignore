@@ -1,0 +1,30 @@
+# Local Python environments and caches
+.venv/
+.venv-*/
+venv/
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+
+# Local credentials and editor settings
+.env
+.env.*
+.idea/
+.vscode/
+
+# Generated results and user projects
+build/
+dist/
+output/
+outputs/
+reports/
+*.log
+*.mrcwa.json
+
+# Keep measured materials and project assets outside the public source tree
+/assets/
+/materials/*
+!/materials/示例材料.txt

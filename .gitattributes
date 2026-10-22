@@ -1,0 +1,7 @@
+* text=auto
+*.py text eol=lf
+*.md text eol=lf
+*.txt text eol=lf
+*.yaml text eol=lf
+# Keep CRLF in repository blobs as well as GitHub source ZIP downloads.
+*.bat -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol

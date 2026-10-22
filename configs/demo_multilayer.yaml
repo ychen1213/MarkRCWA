@@ -1,0 +1,19 @@
+units: um
+geometry:
+  kind: rectangle
+  pitch_um: 8
+  depth_um: 0.12
+  duty: 0.42
+  ridge: Si3N4
+  bottom: Si
+  films:
+    - thickness_um: 0.035
+      material: SiO2
+      position: top
+simulation:
+  wavelength_um: 0.633
+  theta_deg: 15
+  polarization: TM
+  fourier_order: 127
+  na: 0.8
+output: outputs/demo_multilayer

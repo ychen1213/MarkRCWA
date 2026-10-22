@@ -1,0 +1,46 @@
+units: um
+geometry:
+  kind: trapezoid
+  pitch_um: 8
+  depth_um: 0.16
+  duty: 0.5
+  left_angle_deg: 60
+  right_angle_deg: 85
+  slices: 16
+  ridge: Si3N4
+  groove: air
+  bottom: glass_demo
+simulation:
+  wavelength_um: 0.633
+  theta_deg: 0
+  polarization: TE
+  fourier_order: 155
+  na: 0.8
+reference_mark:
+  kind: trapezoid
+  pitch_um: 8
+  depth_um: 0.16
+  duty: 0.5
+  left_angle_deg: 85
+  right_angle_deg: 85
+  slices: 16
+  ridge: Si3N4
+  bottom: glass_demo
+detector:
+  mode: pair
+  orders: [1, 3, 5, 7]
+  min_efficiency: 1.0e-8
+stage_scan:
+  start_um: -4
+  stop_um: 4
+  samples: 2001
+convergence:
+  orders: [3, 5, 7, 11, 15, 21, 31, 41, 55]
+  monitored_orders: [1, 3, 5, 7]
+  efficiency_tolerance: 0.001
+  phase_tolerance_deg: 0.1
+  apd_tolerance_nm: 1
+output: outputs/demo_asymmetric
+morphology_scan:
+  parameter: left_angle_deg
+  values: [55, 60, 65, 70, 75, 80, 85]

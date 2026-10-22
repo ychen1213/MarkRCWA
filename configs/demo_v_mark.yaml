@@ -1,0 +1,34 @@
+# Synthetic dimensions; image pixels are not interpreted as physical dimensions.
+units: um
+geometry:
+  period_y_um: 8
+  arm_angle_deg: 45
+  duty: 0.4
+  mark_width_x_um: 24
+  padding_x_um: 8
+  depth_um: 0.12
+  ridge: Si3N4
+  groove: air
+  top: air
+  bottom: glass_demo
+simulation:
+  wavelength_um: 0.633
+  theta_deg: 0
+  fourier_order: 55
+  na: 0.8
+pair_orders: [1, 3, 5]
+test_displacement_um: [0.1, 0.04]
+stage_scan:
+  start_um: -4
+  stop_um: 4
+  samples: 801
+raster:
+  nx: 512
+  ny: 256
+convergence:
+  orders: [7, 11, 15, 21, 31, 41, 55]
+  monitored_orders: [1, 3, 5]
+  phase_tolerance_deg: 0.1
+  efficiency_tolerance: 0.001
+  apd_tolerance_nm: 1
+output: outputs/demo_v_mark

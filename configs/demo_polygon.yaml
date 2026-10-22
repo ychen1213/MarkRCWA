@@ -1,0 +1,14 @@
+units: um
+geometry:
+  kind: polygon
+  pitch_um: 8
+  points: [[2, 0], [5.6, 0], [6.0, 0.12], [5.8, 0.22], [1.8, 0.22], [2, 0]]
+  slices: 20
+  ridge: Si3N4
+  bottom: glass_demo
+simulation:
+  wavelength_um: 0.633
+  polarization: TE
+  fourier_order: 21
+  na: 0.8
+output: outputs/demo_polygon
